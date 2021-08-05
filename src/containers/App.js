@@ -84,8 +84,6 @@ const switchAgeHandler = () =>{
   }
 
 
-*/
-/*
   setPersonsState({
         persons:[{name: event,    age: personState.persons[0].age}, 
                  {name: 'Suly',   age: personState.persons[1].age},]
