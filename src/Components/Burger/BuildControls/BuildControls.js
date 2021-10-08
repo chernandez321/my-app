@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './BuildControls.css';
+import classes from './BuildControls.module.css';
 import BuildControl from './BuildControl/BuildControl';
-import BurgerBuilder from '../../BurgerBuilder/BurgerBuilder';
+//import BurgerBuilder from '../../BurgerBuilder/BurgerBuilder';
 //import orderSummary from '../OrderSummary/OrderSummary';
 
 const controls = [
@@ -11,7 +11,7 @@ const controls = [
     {label:'Meat', type:'meat'}]
     
 const buildControls = (props) => (
-  <div className='BuildControls'>
+  <div className= {classes.BuildControls}>
    <p>Current Price: $<strong>{props.price}</strong> cup</p>   
     {controls.map(ctrl =>(<BuildControl   key= {ctrl.label} 
                                         label= {ctrl.label}
@@ -19,10 +19,9 @@ const buildControls = (props) => (
                                       removed= {() => props.ingredientsRemoved(ctrl.type)}
                                      disabled= {props.disabled[ctrl.type]}/>))}
                                      
-    <button className= 'OrderButton'
+    <button className= {classes.OrderButton}
              disabled= {!props.purchasable}
-             onClick= {props.ordered} >
-              
+              onClick= {props.ordered} >            
                 Order now!</button>
 </div>
 );
